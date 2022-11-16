@@ -1,0 +1,17 @@
+.bg {
+    background-color: beige;
+    background-size: 1300px 700px;
+    background-image: url(../static/food2.jpeg);
+    background-repeat: no-repeat;
+
+}
+
+.container {
+    position: relative;
+    width: fit-content;
+    background-color: rgb(235, 217, 194);
+    box-sizing: border-box;
+    border-style: calc(10, 4);
+    box-shadow: black;
+    border-width: 2ch;
+}
