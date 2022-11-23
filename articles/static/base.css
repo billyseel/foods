@@ -2,16 +2,21 @@
     background-color: beige;
     background-size: 1300px 700px;
     background-image: url(../static/food2.jpeg);
-    background-repeat: no-repeat;
+    /* background-position: center; */
+    background-repeat: repeat;
+    color: rgb(42, 10, 10);
+
 
 }
 
 .container {
     position: relative;
     width: fit-content;
-    background-color: rgb(235, 217, 194);
+    background: rgba(218, 225, 225, 0.751);
     box-sizing: border-box;
     border-style: calc(10, 4);
     box-shadow: black;
     border-width: 2ch;
+    /* opacity: 0.57; */
+    /* background: transparent; */
 }

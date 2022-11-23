@@ -19,7 +19,7 @@ class Pixnet:
             # 取得第一頁的資料
             response = requests.get(
                 f"https://www.pixnet.net/mainpage/api/tags/{self.restaurant_name}/feeds?filter=articles&sort=latest&per_page=15")
-            print(response.json())
+            # print(response.json())
             # 取得食記資料
             feeds = response.json()["data"]["feeds"]
 
