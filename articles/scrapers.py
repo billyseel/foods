@@ -1,36 +1,32 @@
 import requests
 
 
-# 網站抽象類別
-
-
-# 痞客邦網站
 class Pixnet:
     def __init__(self, restaurant_name):
         self.restaurant_name = restaurant_name
-    # 取得餐廳食記
+    # this part is to get the restaurants review
 
     def get_articles(self):
 
-        result = []  # 回傳結果
+        result = []  # return an empty list so that it can be filled with the search result
 
-        if self.restaurant_name:  # 如果非空值，才進行爬取
+        if self.restaurant_name:  # if not empty it should be crawled.
 
-            # 取得第一頁的資料
+            # we get the information to be displayed
             response = requests.get(
                 f"https://www.pixnet.net/mainpage/api/tags/{self.restaurant_name}/feeds?filter=articles&sort=latest&per_page=15")
-            # print(response.json())
-            # 取得食記資料
+            # print(response.json()) ... we could print this info on a json form to choose what to display
+            # obtaining the info and passing to a variable feeds
             feeds = response.json()["data"]["feeds"]
 
             for feed in feeds:
 
-                avatar = feed["avatar"]  # 食記作者大頭貼
-                author = feed["display_name"]  # 食記作者
-                title = feed["title"]  # 食記標題
-                hit = feed["hit"]  # 食記點擊次數
-                link = feed["link"]  # 食記連結
-                source = "痞客邦"  # 食記來源網站
+                avatar = feed["avatar"]
+                author = feed["display_name"]
+                title = feed["title"]
+                hit = feed["hit"]
+                link = feed["link"]
+                source = "痞客邦"
 
                 result.append(
                     dict(avatar=avatar, author=author, title=title, hit=hit, link=link, source=source))

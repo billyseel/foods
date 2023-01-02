@@ -59,7 +59,8 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         # 'DIRS': [BASE_DIR / 'templates' ],
-        'DIRS': [],  # need to insert templates if wnat to run on a 8000 port
+        # need to insert templates if wnat to run on a 8000 port
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
