@@ -26,6 +26,7 @@ SECRET_KEY = 'django-insecure-%jyf+)%&pil24-x6lnvg74605oc*)l!il*95o+tta7)8iw(v$@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# remember to clear this part '*' to run on a normal 8000 port
 ALLOWED_HOSTS = ['*']
 
 
@@ -58,7 +59,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         # 'DIRS': [BASE_DIR / 'templates' ],
-        'DIRS': [],
+        'DIRS': [],  # need to insert templates if wnat to run on a 8000 port
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -122,6 +123,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+# this part no need if want to run on a normal 8000 port
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # Default primary key field type
